@@ -1,0 +1,11 @@
+{
+	"name": "pan_for_mobile",
+	"displayName": "pan for mobile",
+	"author": "StoneSteel",
+	"description": "Adds Panning option to move without the avatar from mobile.",
+	"version": "1.0.0",
+	"dependencies": ["ui-lib"],
+	"minGameVersion": 1,
+	"hidden": true,
+	"repo": "StoneSteel27/PanForMobile"
+}
