@@ -6,6 +6,6 @@
 	"version": "1.0.0",
 	"dependencies": ["ui-lib"],
 	"minGameVersion": 136,
-	"hidden": false
+	"hidden": true
 	"repo": "StoneSteel27/PanForMobile"
 }
