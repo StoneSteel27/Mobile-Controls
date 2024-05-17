@@ -2,7 +2,7 @@
 	"name": "mobile_controls",
 	"displayName": "Mobile-Controls",
 	"author": "StoneSteel",
-	"description": "Adds Panning, selecting all units, factories option to mobile.",
+	"description": "Mindustry mod that gives mobile users to opportunity use desktop controls.",
 	"version": "2.0.0",
 	"dependencies": [],
 	"minGameVersion": 136,
