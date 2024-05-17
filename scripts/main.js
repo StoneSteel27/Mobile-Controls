@@ -45,6 +45,10 @@ function select_all_unit_factories() {
 		}
 	}
 }
-Events.on(ClientLoadEvent, e => {Core.scene.find("waves").add(Packages.mindustry.ui.MobileButton(Vars.ui.getIcon("diagonal"), "Pan", pan))});
-Events.on(ClientLoadEvent, e => {Core.scene.find("waves").add(Packages.mindustry.ui.MobileButton(Vars.ui.getIcon("units"), "sau", select_all_units))});
-Events.on(ClientLoadEvent, e => {Core.scene.find("waves").add(Packages.mindustry.ui.MobileButton(Vars.ui.getIcon("distribution"), "saf", select_all_unit_factories))});
+Events.on(ClientLoadEvent, e => {
+	var select = Core.scene.find("mobile buttons");
+	var style = Styles.cleari;
+	select.button(Vars.ui.getIcon("diagonal"), style, pan).name("pan");
+	select.button(Vars.ui.getIcon("units"), style, select_all_units).name("select all units);
+	select.button(Vars.ui.getIcon("distribution"), style, select_all_unit_factories).name("select all factories");
+});
