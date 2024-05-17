@@ -49,6 +49,6 @@ Events.on(ClientLoadEvent, e => {
 	var select = Core.scene.find("mobile buttons");
 	var style = Styles.cleari;
 	select.button(Vars.ui.getIcon("diagonal"), style, pan).name("pan");
-	select.button(Vars.ui.getIcon("units"), style, select_all_units).name("select all units);
+	select.button(Vars.ui.getIcon("units"), style, select_all_units).name("select all units");
 	select.button(Vars.ui.getIcon("distribution"), style, select_all_unit_factories).name("select all factories");
 });
