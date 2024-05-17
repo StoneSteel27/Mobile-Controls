@@ -47,6 +47,7 @@ function select_all_unit_factories() {
 	}
 }
 Events.on(ClientLoadEvent, e => {
+	Vars.control.setInput(new MobileInput());
 	if (Vars.mobile && !init){
 		var select = Core.scene.find("mobile buttons");
 		var style = Styles.cleari;
