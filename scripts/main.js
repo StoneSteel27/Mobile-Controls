@@ -23,6 +23,8 @@ function pan() {
     }
 	
 function select_all_units() {
+	Core.settings.put("keyboard", false);
+	Vars.control.setInput(new MobileInput());
 	Vars.control.input.commandMode = true;
 	Vars.control.input.commandBuildings.clear();
 	var len = Vars.player.team().data().units.size;
@@ -36,6 +38,8 @@ function select_all_units() {
 }
 
 function select_all_unit_factories() {
+	Core.settings.put("keyboard", false);
+	Vars.control.setInput(new MobileInput());
 	Vars.control.input.commandMode = true;
 	Vars.control.input.selectedUnits.clear();
 	var len = Vars.player.team().data().buildings.size;
@@ -47,7 +51,6 @@ function select_all_unit_factories() {
 	}
 }
 Events.on(ClientLoadEvent, e => {
-	Vars.control.setInput(new MobileInput());
 	if (Vars.mobile && !init){
 		var select = Core.scene.find("mobile buttons");
 		var style = Styles.cleari;
