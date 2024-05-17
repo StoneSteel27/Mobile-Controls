@@ -27,26 +27,16 @@ function pan() {
     }
 	
 function select_all_units() {
-	sau_activate = !sau_activate;
-	if (sau_activate){
-		Vars.control.setInput(new DesktopInput()); 
-		Core.settings.put("keyboard", true);
-		var key1 = Core.keybinds.get(Binding.select_all_units).key.ordinal();
-		var com1 = Core.keybinds.get(Binding.command_mode).key.ordinal();
-		Reflect.get(Core.input.getKeyboard(), "pressed").add(com1);
-		Reflect.get(Core.input.getKeyboard(), "pressed").add(key1);
-		Vars.ui.showInfoToast("select all units mode: [green]ON", 3);
-	} else {
-        var key1 = Core.keybinds.get(Binding.select_all_units).key.ordinal();
-		var com1 = Core.keybinds.get(Binding.command_mode).key.ordinal();
-		Reflect.get(Core.input.getKeyboard(), "pressed").remove(key1);
-        Reflect.get(Core.input.getKeyboard(), "pressed").remove(com1);
-        Core.settings.put("keyboard", false);
-		Vars.control.setInput(new MobileInput());
-		Vars.ui.showInfoToast("select all units mode: [red]OFF", 3);
+	Vars.control.input.commandMode = true;
+	var len = Math.floor(Object.keys(Vars.player.team().data().units).lenght);
+	for( var u=0 ; u<len; ++u ){
+		var unit = Vars.player.team().data().units.get(u);
+		if (unit.isCommandable()){
+			Vars.control.input.selectedUnits.add(unit);
+		}
 	}
-}
 
+}
 function select_all_unit_factories() {
 	sauf_activate = !sauf_activate;
 	if (sauf_activate){
