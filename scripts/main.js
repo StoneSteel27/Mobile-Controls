@@ -9,12 +9,12 @@ function pan() {
     pan_activate = !pan_activate;
     if (pan_activate) {
             Vars.ui.showInfoToast("Pan mode: [green]ON", 3); 
-			orgx = Core.camera.position.x; 
-			orgy = Core.camera.position.y;
-			Vars.control.setInput(new DesktopInput());
-			Core.settings.put("keyboard", true);
+	    orgx = Core.camera.position.x; 
+	    orgy = Core.camera.position.y;
+	    Vars.control.setInput(new DesktopInput());
+	    Core.settings.put("keyboard", true);
             var key = Core.keybinds.get(Binding.pan).key.ordinal(); 
-			Reflect.get(Core.input.getKeyboard(), "pressed").add(key);
+	    Reflect.get(Core.input.getKeyboard(), "pressed").add(key);
         }
         else {
             Vars.ui.showInfoToast("Pan mode: [red]OFF", 3);
